@@ -9,8 +9,9 @@ class ListAllUsersController {
   handle(request: Request, response: Response): Response {
     const { user_id } = request.params;
 
-    this.listAllUsersUseCase.execute({ user_id });
-    return response.send();
+    const all = this.listAllUsersUseCase.execute({ user_id });
+
+    return response.json(all);
   }
 }
 
