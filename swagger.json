@@ -4,5 +4,42 @@
     "title": "Rent Car Api",
     "description": "Rent car api documentation",
     "version": "1.0.0"
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Create a new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "exemple": {
+                  "name": "john doe",
+                  "email": "johndoe@mail.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "User created with successful."
+          },
+          "400": {
+            "description": "User already exists!."
+          }
+        }
+      }
+    }
   }
 }
