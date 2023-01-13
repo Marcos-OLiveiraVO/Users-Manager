@@ -1,14 +1,15 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Rent Car Api",
-    "description": "Rent car api documentation",
+    "title": "Users Manager",
+    "description": "Users Manager",
     "version": "1.0.0"
   },
   "paths": {
     "/users": {
       "post": {
         "tags": ["Users"],
+        "description": "CREATE A NEW USER",
         "summary": "Create a new user",
         "requestBody": {
           "content": {
@@ -33,7 +34,7 @@
         },
         "responses": {
           "201": {
-            "description": "User created with successful",
+            "description": "User created with successful.",
             "content": {
               "application/json": {
                 "schema": {
@@ -64,7 +65,7 @@
             }
           },
           "400": {
-            "description": " A user with the specified ID already exists!."
+            "description": " Error: A user with the specified ID already exists!."
           }
         }
       }
@@ -72,6 +73,8 @@
     "/users/{user_id}/admin": {
       "patch": {
         "tags": ["Users"],
+        "description": "TURN USER IN ADMIN",
+        "summary": "Turn user in admin",
         "parameters": [
           {
             "name": "user_id",
@@ -79,7 +82,7 @@
             "in": "path",
             "required": "true",
             "type": "string",
-            "description": "the user ID"
+            "description": "The user ID"
           }
         ],
         "responses": {
@@ -135,6 +138,8 @@
     "/users/{user_id}": {
       "get": {
         "tags": ["Users"],
+        "description": "SHOW PROFILE USER",
+        "summary": "Show profile user",
         "parameters": [
           {
             "name": "user_id",
@@ -147,7 +152,77 @@
         ],
         "responses": {
           "200": {
-            "description": "User Profile",
+            "description": "Show User Profile",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "admin": {
+                      "type": "boolean"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  },
+                  "exemple": {
+                    "name": "john doe",
+                    "email": "johndoe@mail.com"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not exists!.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "exemple": {
+                    "name": "john doe",
+                    "email": "johndoe@mail.com"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/": {
+      "get": {
+        "tags": ["Users"],
+        "description": "ONLY ADMIN CAN LIST ALL USERS",
+        "summary": "List all users only for admin",
+        "parameters": [
+          {
+            "in": "header",
+            "name": " X-Request-ID ",
+            "required": "true",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The Headers User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Show User Profile",
             "content": {
               "application/json": {
                 "schema": {
