@@ -19,6 +19,19 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
       
       yarn
 
+
+## Rotas
+
+
+      POST /users/ → cria um usuário. 
+
+      PATCH /users/:user_id/admin → altera o usuário para um admin.
+
+      GET /users/:user_id → Mostra o perfil do usuário.
+
+      GET /users/ → lista todos os usuários somente para admins.
+
+
 <h3>✨ Utilizando os testes:</h3>
 
       yarn dev
