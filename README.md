@@ -34,6 +34,14 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
       /api-docs → Documentação da aplicação.
 
 
+## Documentação
+
+      /api-docs → Documentação da aplicação.
+ 
+ 
+ ![image](https://user-images.githubusercontent.com/88260644/212365773-c0ffa311-0eb8-476b-ba08-7c5948cdedb2.png)
+
+
 <h3>✨ Utilizando os testes:</h3>
 
       yarn dev
