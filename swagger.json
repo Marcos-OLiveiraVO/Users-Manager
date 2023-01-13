@@ -23,7 +23,7 @@
                     "type": "string"
                   }
                 },
-                "exemple": {
+                "example": {
                   "name": "john doe",
                   "email": "johndoe@mail.com"
                 }
@@ -33,10 +33,101 @@
         },
         "responses": {
           "201": {
-            "description": "User created with successful."
+            "description": "User created with successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  },
+                  "exemple": {
+                    "name": "john doe",
+                    "email": "johndoe@mail.com"
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "User already exists!."
+          }
+        }
+      }
+    },
+    "/users/{user_id}/admin": {
+      "patch": {
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "name": "user_id",
+            "example": "dfd6422e-3b15-4647-82cf-237cac91849f",
+            "in": "path",
+            "required": "true",
+            "type": "string",
+            "description": "the user ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User Updated with successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  },
+                  "exemple": {
+                    "name": "john doe",
+                    "email": "johndoe@mail.com"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not exists!.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "exemple": {
+                    "name": "john doe",
+                    "email": "johndoe@mail.com"
+                  }
+                }
+              }
+            }
           }
         }
       }
