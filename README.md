@@ -3,10 +3,7 @@
 
 <h4> Gerenciamento de Usuários. </h4>
 
-<h4>Gerenciamento de usuários Foi utilizado os conceitos e padrões do solid e clean architecture. dentre as funcionalidades estão, Criação do usuário.
-Alterar o usuario para um admin.
-Mostrar o perfil do usuário.
-Listar os usuários somente para um admin.</h4>
+<h4>Gerenciamento de usuários, uma aplicação de listagem e cadastro de usuários, Foi utilizado os conceitos e padrões do solid e clean architecture.</h4>
 
 
 
