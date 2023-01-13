@@ -30,6 +30,8 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
       GET /users/:user_id → Mostra o perfil do usuário.
 
       GET /users/ → lista todos os usuários somente para admins.
+      
+      /api-docs → Documentação da aplicação.
 
 
 <h3>✨ Utilizando os testes:</h3>
